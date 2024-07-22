@@ -1,13 +1,134 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* General */
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+button {
+  cursor: pointer;
+}
+
+/* NAV */
+.nav {
+  background-color: #999;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.nav > h3 {
+  margin: 0;
+  align-self: center;
+}
+
+/* - CART */
+.cart__container {
+  position: relative;
+}
+.cart__container:hover {
+  cursor: pointer;
+}
+.cart__container:hover .cart {
+  display: flex;
+}
+.cart__toggler {
+  display: inline-block;
+  padding: 1rem 3rem;
+}
+.cart {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ddd;
+  padding: 2rem;
+  width: 25rem;
+  width: auto;
+}
+.cart .item,
+.cart__total {
+  padding: 1rem;
+}
+.cart .item {
+  display: flex;
+  /* align-items: flex-start; */
+  column-gap: 1rem;
+}
+.cart__list .item:last-child {
+  margin-bottom: 1rem;
+}
+.cart .item:hover {
+  background-color: lightblue;
+}
+.cart img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+}
+
+.cart .item h4 {
+  margin: 0;
+}
+.cart .item__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart .item__actions {
+  display: flex;
+  column-gap: 5px;
+}
+.cart .item__price {
+  flex: 1;
+  text-align: right;
+}
+.cart__total {
+  text-align: right;
+  border-top: 1px solid #bbb;
+}
+
+/* PRODUCTS */
+.product__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  /* justify-content: center; */
+}
+.product {
+  flex: 0 1 20rem;
+  background-color: #777;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.product img {
+  width: 100%;
+  height: auto;
+}
+.product__info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem;
+  row-gap: 1rem;
+}
+.product__name {
+  margin: 0;
+}
+.product__add-to-cart {
+  padding: 1rem;
 }
